@@ -1,5 +1,5 @@
-resource "aws_security_group" "databasesg" {
-  vpc_id = aws_vpc.main.id
+resource "aws_security_group" "db-sg" {
+  vpc_id = aws_vpc.aziz.id
 
   ingress {
     description     = "allow traffic from application layer"
@@ -7,7 +7,7 @@ resource "aws_security_group" "databasesg" {
     to_port         = 3306
     protocol        = "tcp"
     cidr_blocks     = ["0.0.0.0/0"]
-    security_groups = [aws_security_group.websg.id]
+    security_groups = [aws_security_group.web-sg.id]
   }
 
   egress {
@@ -18,6 +18,6 @@ resource "aws_security_group" "databasesg" {
   }
 
   tags = {
-    Name = "databasesg"
+    Name = "db-sg"
   }
 }
