@@ -3,8 +3,8 @@ resource "aws_lb" "external_alb" {
   name               = "External-LB"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.websg.id]
-  subnets            = [aws_subnet.publicsubnet1.id, aws_subnet.publicsubnet2.id]
+  security_groups    = [aws_security_group.web-sg.id]
+  subnets            = [aws_subnet.public-subnet1.id, aws_subnet.public-subnet2.id]
 }
 
 # Creating Target Group
@@ -12,7 +12,7 @@ resource "aws_lb_target_group" "target_elb" {
   name     = "ALB-TG"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = aws_vpc.main.id
+  vpc_id   = aws_vpc.aziz.id
 
   health_check {
     path     = "/health"
