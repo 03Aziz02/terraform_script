@@ -17,16 +17,16 @@ variable "subnet3_cidr" {
   default = "10.0.3.0/24"
 }
 
-#define cidr block for 4 subnet
+#define cidr block for 4th subnet
 variable "subnet4_cidr" {
   default = "10.0.4.0/24"
 }
-#define cidr block for 5 subnet
+#define cidr block for 5th subnet
 variable "subnet5_cidr" {
   default = "10.0.5.0/24"
 }
 
-#define cidr block for 6 subnet
+#define cidr block for 6th subnet
 variable "subnet6_cidr" {
   default = "10.0.6.0/24"
 }
