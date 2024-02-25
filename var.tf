@@ -3,7 +3,7 @@ resource "aws_launch_configuration" "lc-asg" {
   image_id        = "ami-0cf10cdf9fcd62d37"
   instance_type   = "t2.micro"
   key_name        = "terraform"
-  security_groups = [aws_security_group.websg.id]
+  security_groups = [aws_security_group.web-sg.id]
 }
 
 resource "aws_autoscaling_group" "asg" {
